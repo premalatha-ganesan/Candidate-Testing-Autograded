@@ -11,14 +11,15 @@ let correctAnswer = "Sally Ride";
 let candidateAnswer = "";
 
 //TODO: Variables for Part 2
-let questions = [];
-questions[0] = "Who was the first American woman in space? ";
-questions[1] = "True or false: 5 kilometer == 5000 meters? ";
-questions[2] = "(5 + 3)/2 * 10 = ? ";
-questions[3] = "Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ";
-questions[4] = "What is the minimum crew size for the ISS? ";
+let questions = [ 
+                  "Who was the first American woman in space? ",
+                  "True or false: 5 kilometer == 5000 meters? ",
+                  "(5 + 3)/2 * 10 = ? ",
+                  "Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ",
+                  "What is the minimum crew size for the ISS? "
+                ];
 
-let correctAnswers = ["Sally Ride", "true", "40", "Trajectory", "3"];
+let correctAnswers = [ "Sally Ride", "true", "40", "Trajectory", "3" ];
 let candidateAnswers = [];
 
 function askForName() {
@@ -40,9 +41,9 @@ function gradeQuiz(candidateAnswers) {
   console.log(`Candidate Name: ${candidateName}`)
   let score = 0;
   for (i = 0; i < candidateAnswers.length; i++) {
-    console.log(`${questions[i]}
-      Correct Answer : ${correctAnswers[i]}
-      Your Answer : ${candidateAnswers[i]}`); 
+    console.log(`${i+1}) ${questions[i]}
+      Your Answer : ${candidateAnswers[i]}
+      Correct Answer : ${correctAnswers[i]}`); 
 
       if(candidateAnswers[i].toLowerCase() == correctAnswers[i].toLowerCase()){
         score += 1;
@@ -65,7 +66,7 @@ function gradeQuiz(candidateAnswers) {
 function runProgram() {
   askForName();
   // TODO 1.1c: Greet candidate using their name //
-  console.log("Good morning " + candidateName + "!");
+  console.log("Hello " + candidateName + "!");
   askQuestion();
   gradeQuiz(this.candidateAnswers);
 }
