@@ -38,14 +38,12 @@ function askQuestion() {
 
 function gradeQuiz(candidateAnswers) {
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly //
-  console.log(`Candidate Name: ${candidateName}`)
+  console.log(`\nCandidate Name: ${candidateName}`)
   let score = 0;
   for (i = 0; i < candidateAnswers.length; i++) {
-    console.log(`${i+1}) ${questions[i]}
-      Your Answer : ${candidateAnswers[i]}
-      Correct Answer : ${correctAnswers[i]}`); 
+    console.log(`${i+1}) ${questions[i]}\nYour Answer : ${candidateAnswers[i]}\nCorrect Answer : ${correctAnswers[i]}\n`); 
 
-      if(candidateAnswers[i].toLowerCase() == correctAnswers[i].toLowerCase()){
+      if(candidateAnswers[i].toLowerCase() == correctAnswers[i].toLowerCase()) {
         score += 1;
       }
   }
